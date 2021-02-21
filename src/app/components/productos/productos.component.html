@@ -1,0 +1,30 @@
+<h1 class="display-5" style="color: #473144; padding: 10px;">{{titulo}}</h1>
+
+<main>
+  <div class="container" style="padding: 10px;">
+    <div class="table-responsive">
+      <table class="table table-sm">
+        <thead style="color: #13505b; font-size: 20px;">
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+            <th>Disponible</th>
+          </tr>
+        </thead>
+        <tbody style="color: #1d7787; font-size: 18px;">
+          <ng-container *ngFor="let producto of productos">
+            <!-- <tr *ngIf="producto.status == true"> -->
+            <!-- <tr [style.color]="producto.status == false ? '#AF1B3F' : '#1d7787'"> -->
+            <tr [class.agotado]="producto.status == false">
+              <td>{{producto.nombre}}</td>
+              <td>${{producto.precio}}.00</td>
+              <td>{{producto.categoria}}</td>
+              <td>{{producto.status}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

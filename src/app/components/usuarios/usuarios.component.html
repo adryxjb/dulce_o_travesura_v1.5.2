@@ -1,0 +1,14 @@
+<h1 class="display-5" style="color: #473144; padding: 10px;">{{titulo}}</h1>
+
+<div class="containter d-flex justify-content-center">
+  <ng-container *ngIf="user">
+    <div class="card" style="width: 18rem;">
+      <h5 class="card-header">User data</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Username: {{ user.username}}</li>
+        <li class="list-group-item">Nombre: {{ user.name }}</li>
+        <li class="list-group-item">Ciudad: {{ user.address.city }}</li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

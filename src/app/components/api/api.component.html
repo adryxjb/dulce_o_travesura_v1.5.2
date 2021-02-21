@@ -1,0 +1,24 @@
+<h1 class="display-5" style="color: #473144; padding: 10px;">{{titulo}}</h1>
+
+<div class="container">
+  <table class="table table-sm">
+    <thead style="color: #13505b; font-size: 20px;">
+      <tr>
+        <th>Index</th>
+        <th>Nombre</th>
+        <th>Usuario</th>
+        <th>Ciudad</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody style="color: #1d7787; font-size: 18px;">
+      <tr *ngFor="let user of this.users, let i=index">
+        <td>{{ i }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address.city }}</td>
+        <td><button type="button" (click)="redirigir(i+1)">Ver</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

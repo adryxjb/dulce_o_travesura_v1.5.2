@@ -1,0 +1,47 @@
+<h1 class="display-5" style="color: #473144; padding: 10px;">{{titulo}}</h1>
+
+<div class="container">
+  <select
+    class="form-select form-select-lg mb-3"
+    aria-label=".form-select-lg example"
+    [(ngModel)]="tema"
+  >
+    <option selected>Selecciona una opción para buscar tu receta</option>
+    <option value="cake">Pasteles</option>
+    <option value="brownie">Brownies</option>
+    <option value="cookie">Galletas</option>
+    <option value="donuts">Donas</option>
+    <option value="cupcake">Cupcakes</option>
+    <option value="crepes">Crepas</option>
+    <option value="cheesecake">Cheesecakes</option>
+    <option value="pancake">Hotcakes</option>
+    <option value="icecream">Helados</option>
+    <option value="strudel">Strudel</option>
+    <option value="pie">Pays</option>
+  </select>
+  <button
+    type="button"
+    class="btn btn-outline-secondary bi bi-search"
+    (click)="buscarReceta(tema)"
+  >
+    Buscar
+  </button>
+
+  <div class="containter d-flex justify-content-center">
+    <ng-container *ngIf="receta">
+      -->
+      <div
+        class="card"
+        style="width: 18rem;"
+        *ngFor="let receta of this.recetas, let i=index"
+      >
+        <img src="" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{}</h5>
+          <p class="card-text">{{}}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

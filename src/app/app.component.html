@@ -1,0 +1,68 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #af3e4d;"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">Dulce o Travesura</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/home']"
+          >
+            <span class="bi bi-house" aria-hidden="true">Inicio</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/productos']">
+            <span class="bi bi-flower3" aria-hidden="true">Productos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/recetas']">
+            <span class="bi bi-journals" aria-hidden="true">Recetas</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/registro']">
+            <span class="bi bi-clipboard-check" aria-hidden="true"
+              >Regístrate</span
+            >
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/contacto']">
+            <span class="bi bi-chat-quote" aria-hidden="true">Contáctanos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+          >
+            <span class="bi bi-bag" aria-hidden="true">Comprar</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

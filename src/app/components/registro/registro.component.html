@@ -1,0 +1,85 @@
+<h1 class="display-5" style="color: #473144; padding: 10px;">{{titulo}}</h1>
+
+<div class="container" style="padding: 10px;">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="E-mail"
+      aria-label="E-mail"
+      aria-describedby="basic-addon2"
+      [(ngModel)]="email"
+    />
+    <span class="input-group-text" id="basic-addon2">usuario@ejemplo.com</span>
+  </div>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nombre"
+      aria-label="Nombre"
+      aria-describedby="basic-addon2"
+      [(ngModel)]="nombre"
+    />
+    <span class="input-group-text" id="basic-addon2">Nombre Completo</span>
+  </div>
+
+  <div>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      [(ngModel)]="edad"
+    >
+      <option selected>Open this select menu</option>
+      <option value="1">Menor de 18 años</option>
+      <option value="2">De 18 a 25 años</option>
+      <option value="3">De 26 a 35 años</option>
+      <option value="4">De 36 a 45 años</option>
+      <option value="5">De 46 a 55 años</option>
+      <option value="6">De 56 a 65 años</option>
+      <option value="7">Mayor de 66 años</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <div class="container">
+    <button
+      type="button"
+      class="btn btn-outline-success bi bi-check2-all"
+      (click)="guardarUsuario(nombre, email, edad)"
+    >
+      Registrarme
+    </button>
+  </div>
+</div>
+
+<div class="container">
+  <p>{{nombre}}</p>
+</div>
+
+<br />
+<br />
+
+<div class="container" style="padding: 10px;">
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead style="color: #13505b; font-size: 20px;">
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rango de Edad</th>
+        </tr>
+      </thead>
+      <tbody style="color: #1d7787; font-size: 18px;">
+        <ng-container *ngFor="let usuario of usuarios">
+          <tr>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.edad}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
